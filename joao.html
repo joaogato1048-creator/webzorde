@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página Oficial de Acesso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            color: #003366;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #444;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #003366;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #003366;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0055a5;
+        }
+        .footer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gabriel Fernades é GAY</h1>
+        <form id="accessForm">
+            <label for="detailInput">Digite o nome de quem vai comer ele:</label>
+            <input type="text" id="detailInput" placeholder="Ex: Seu nome ou código" required />
+            <button type="submit">Acessar</button>
+        </form>
+        <div class="footer">© 2025 Sua Empresa - Todos os direitos reservados</div>
+    </div>
+
+    <script>
+        document.getElementById('accessForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio tradicional do formulário
+            
+            const detail = document.getElementById('detailInput').value.trim();
+            if(detail === '') {
+                alert('Por favor, preencha o campo antes de acessar.');
+                return;
+            }
+            
+            // Aqui você pode definir a URL de redirecionamento, possivelmente adicionando o detalhe como parâmetro
+            const urlBase = 'https://www.seusite.com/entrada'; // troque pelo link desejado
+            const redirectUrl = `${urlBase}?detail=${encodeURIComponent(detail)}`;
+            
+            // Redireciona para o link
+            window.location.href = redirectUrl;
+        });
+    </script>
+     
+</body>
+</html>
