@@ -7,12 +7,12 @@ def carregar_filmes():
     filmes = []
     try:
         with open(ARQUIVO, newline='', encoding='utf-8') as f:
-            leitor = csv.DictReader(f)
+            leitor = csv.DictReader(f) # caminho para ler o arquivo CSV como dicionário
             for linha in leitor:
                 filmes.append(linha)
     except FileNotFoundError:
         pass
-    return filmes
+    return filmes # se o arquivo não eexistir, retorna lista vazia
 
 # Salva os filmes no arquivo CSV
 def salvar_filmes(filmes):
